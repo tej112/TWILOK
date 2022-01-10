@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twilok</title>
+</head>
+
+<body>
+
+    <h1>{{data.post}}</h1>
+    <button onClick="window.location.reload();">Next Post</button>
+
+    <form method="POST">
+        <label>Post Your Thoughts</label>
+        <input name="post" type="text" placeholder="Enter your post here">
+        <button type="submit">Publish Post</button> {% for mesg in get_flashed_messages() %}
+        <h5>{{ mesg }}</h5>
+        {% endfor %}
+    </form>
+</body>
+
+</html>
