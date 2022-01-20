@@ -29,13 +29,13 @@ def index():
     if request.method == "POST":
         if request.form['post'] == "":
             # flash("Dont leave post space Empty!!")
-            return redirect('/')
+            return redirect(url_for('index'))
         new_post = Post(
             post = request.form['post']
         )
         db.session.add(new_post)
         db.session.commit()
-        return redirect('/')
+        return redirect(url_for('index'))
     #gets all the rows from data base and randomly selects one and displays
     data = db.session.query(Post).all()
     d = random.choice(data)
